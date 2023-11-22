@@ -27,11 +27,15 @@ public class testclass {
         assertEquals(expected, actual);
     }
     @Test
-    public void testLinesandChar(){
+    public void testaStopcommand(){
         secondMain secondMain = new secondMain();
-        secondMain.getinfo("hello\nfriend");//detta inkluderar mellan slag
-        //eftersom vi hoppar en rad
-        assertEquals(12, secondMain.getCharCount());
-        assertEquals(1, secondMain.getLines()-1);
+        secondMain.getinfo("hi");
+        secondMain.getinfo("hi again");
+        secondMain.getinfo("stop");// testar om stop command räknas
+        int expected = 9;
+        int actual = secondMain.getCharCount();
+        assertEquals(expected, actual);
+
     }
 }
+
